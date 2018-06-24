@@ -1,23 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#include <GLFW\glfw3.h>
-
-#include "linmath.h"
-
-
 #include "gd.h"
 
 
-int main(void) {
-	GD* graphicDisplay = new GD ();
-	/*
+
+
+GD::GD() {
+	init();
+	run();
+
+	
+}
+
+void GD::init() {
+	
 	if (!glfwInit()) {
 		exit(EXIT_FAILURE);
 	}
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-	GLFWwindow* window = glfwCreateWindow(500, 500, "Opengl example", NULL, NULL);
+	window = glfwCreateWindow(500, 500, "Opengl example", NULL, NULL);
 	if (!window) {
 		glfwTerminate();
 		exit(EXIT_FAILURE);
@@ -25,6 +25,13 @@ int main(void) {
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1);
 
+	
+	
+	
+}
+
+void GD::run() {
+	
 	while (!glfwWindowShouldClose(window)) {
 		//setup view
 		float ratio;
@@ -34,21 +41,24 @@ int main(void) {
 		glViewport(0, 0, width, height);
 		glClear(GL_COLOR_BUFFER_BIT);
 		//drawing
-		glBegin(GL_LINE_STRIP);
-		glVertex3f(0, 0, 0);
-		glVertex3f(1, 0, 0);
-		glVertex3f(0, 1, 0);
+		glBegin(GL_TRIANGLES);
+		glVertex3f(0,0,0);
+		glVertex3f(0,.124,0);
+		glVertex3f(1,0,0);
 		glEnd();
 		//swap buffer & event check
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
-
 	glfwDestroyWindow(window);
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
-	*/
-	system("pause");
-	return 0;
 }
 
+
+
+
+
+GD::~GD()
+{
+}
