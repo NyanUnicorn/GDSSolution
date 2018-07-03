@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <GLFW\glfw3.h>
-
-#include "linmath.h"
-
-
 #include "gd.h"
 
 
@@ -48,6 +43,7 @@ int main(void) {
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
 	*/
+	printf("hi");
 	system("pause");
 	return 0;
 }

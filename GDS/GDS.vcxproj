@@ -19,11 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Componenent.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GD.cpp" />
+    <ClCompile Include="GDTools.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="gd.h" />
+    <ClInclude Include="gdtools.h" />
     <ClInclude Include="linmath.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
