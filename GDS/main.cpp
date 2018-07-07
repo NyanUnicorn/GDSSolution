@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <list>
+
+#include "linmath.h"
+#include "gdtools.h"
 
 #include "gd.h"
 

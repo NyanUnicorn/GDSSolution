@@ -63,21 +63,23 @@ Entity* loadEntities(int _entityId, std::string _filename, std::list<GDENTITYRES
 		}
 	}
 	else {
-		int rootId = getRootEntityId();
 		//fetch all entities
+		FetchEntityList(_ENTITY_LIST);
 		//fetch filename for world creation begin
-		entityAdr = loadEntities(rootId, "hhhh", _ENTITY_LIST);
+		entityAdr = loadEntities(5, "hhhh", _ENTITY_LIST);
 	}
 	return entityAdr;
 }
 
-int getRootEntityId() {
-	int id;
-	return id;
+void FetchEntityList(std::list<GDENTITYRES*>* _entit_list) {
+	FILE* file = fopen("gdsentities.conf", "r");
+	int position;
+	//position = entityConf::findInConf("Entities", file);
+	//fscanf(file, "%s entities:");
 }
 
 std::list<GDENTITYRES*> fetchEntities(FILE* _file, unsigned long* _position) {
-	std::list<GDENTITYRES*>entityResList;
+	std::list<GDENTITYRES*> entityResList;
 	char seperator;
 	fseek(_file, *_position, SEEK_SET);
 	fflush(_file);
@@ -96,4 +98,16 @@ std::list<GDENTITYRES*> fetchEntities(FILE* _file, unsigned long* _position) {
 		fscanf(_file, "%c", &seperator);
 	}
 	return entityResList;
+}
+
+namespace entityConf {
+	int findInConf(std::string option, FILE* _file) {
+		int end;
+		end = file::getEnd(_file);
+		fseek(_file, 0, SEEK_SET);
+		char search[] = "";
+		while (option.c_str() == search) {
+
+		}
+	}
 }

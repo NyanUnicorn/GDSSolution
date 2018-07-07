@@ -73,7 +73,7 @@ void GD::render3D() {
 
 void GD::load() {
 	Entity world;
-	world = *loadEntities(NULL, NULL, &ENTITY_LIST);
+	//world = *loadEntities(NULL, NULL, &ENTITY_LIST);
 }
 
 void GD::declarations() {

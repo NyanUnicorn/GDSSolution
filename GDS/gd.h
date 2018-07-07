@@ -12,7 +12,7 @@
 
 class GD {
 	GLFWwindow* gdwindow;
-	std::list<Entity> Entities;
+	std::list<GDENTITYRES*> Entities;
 	void init();
 	void run();
 	void drawTriangle();

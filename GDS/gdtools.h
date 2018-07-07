@@ -8,6 +8,7 @@
 #include <Windows.h>
 
 #include "linmath.h"
+#include "file.h"
 
 #include "entity.h"
 #include "Component.h"
@@ -17,19 +18,18 @@
 
 
 
-
-typedef struct {
-	double x;
-	double y;
-	double z;
-	GDCOLOR c;
-}GDVERTEX;
 typedef struct {
 	double r;
 	double g;
 	double b;
 	double a;
 }GDCOLOR;
+typedef struct {
+	double x;
+	double y;
+	double z;
+	GDCOLOR c;
+}GDVERTEX;
 typedef struct {
 	double x;
 	double y;
@@ -57,11 +57,7 @@ typedef struct {
 	Component* entity;
 }GDCOMPONENTRES;
 
-Entity* loadEntities(int entityId, std::string filename, std::list<GDENTITYRES*>* ENTITY_LIST);
-std::string fetchName(FILE* fileName);
-GDSIZE fetchSize(FILE* fileName);
-bool fectchMobility(FILE* fileName);
-bool fetchRotate(FILE* fileName);
-GDCOLOR fetchDominantColor(FILE* fileName);
-GDENTITYRES fetchEntity(FILE* file, unsigned long* position);
+//Entity* loadEntities(int entityId, std::string filename, std::list<GDENTITYRES*>* ENTITY_LIST);
+std::list<GDENTITYRES*> fetchEntities(FILE* file, unsigned long* position);
 GDCOMPONENTRES fetchComponent(FILE* fileName);
+void FetchEntityList(std::list<GDENTITYRES*>* entit_list);

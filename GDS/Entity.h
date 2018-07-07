@@ -17,7 +17,7 @@ class Entity {
 public:
 	int id;
 	std::string name;
-	GDPOSITION size;
+	GDSIZE size;
 	GDPOSITION position;
 
 	bool mobile;
@@ -34,9 +34,9 @@ public:
 	~Entity();
 
 private:
-	std::list<Entity> Entities;
-	std::list<Component> Components;
-	std::list<GDVERTEX> vertexList;
+	std::list<GDENTITYRES*> Entities;
+	std::list<Component*> Components;
+	std::list<GDVERTEX*> vertexList;
 
 
 };
